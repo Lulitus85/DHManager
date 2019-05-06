@@ -4,9 +4,9 @@ class ProfesorTitular extends Profesor
 {
     private $especialidad;
 
-    public function __construct(string $nombre, string $apellido, int $antiguedad, int $profId, string $especialidad)
+    public function __construct(string $nombre, string $apellido, int $profId, string $especialidad)
     {
-        parent::__construct($nombre,$apellido,$antiguedad,$profId);
+        parent::__construct($nombre,$apellido,$profId);
         $this->especialidad=$especialidad;
     }
 

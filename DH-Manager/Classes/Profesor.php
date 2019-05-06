@@ -7,11 +7,11 @@ abstract class Profesor
     private $antiguedad;
     private $profId;
 
-    public function __construct(string $nombre, string $apellido, int $antiguedad, int $profId)
+    public function __construct(string $nombre, string $apellido, int $profId)
     {
         $this->nombre=$nombre;
         $this->apellido = $apellido;
-        $this->antiguedad=$antiguedad;
+        /* $this->antiguedad=$antiguedad; */
         $this->idProfesor=$profId;
     }
 

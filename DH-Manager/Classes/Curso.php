@@ -9,32 +9,32 @@ class Curso
     private $cupo;
     private $lista = array(); //No lo pongo en el constructor porque la lista de alumnos viene despues. El curso se arma y luego se suman alumnos, hasta completar el $cupo preestablecido
 
-    public function __construct(string $cursoNombre, int $cursoId, ProfesorTitular $profesorTitular, ProfesorAdjunto $profesorAdjunto, int $cupo)
+    public function __construct(string $cursoNombre, int $cursoId, int $cupo)
     {
-        $this->nombreCurso=$cursoNombre; //en el espacio reservado para nombreCurso igualamelo al parametro que pase cuando lo instancie en el lugar de $cursoNombre)
-        $this->codigoCurso=$cursoId;
-        $this->profesor=$profesorTitular;
-        $this->profesorAdj=$profesorAdjunto;
+        $this->cursoNombre=$cursoNombre; //en el espacio reservado para nombreCurso igualamelo al parametro que pase cuando lo instancie en el lugar de $cursoNombre)
+        $this->cursoId=$cursoId;
+        /* $this->profesorTitular=$profesorTitular;
+        $this->profesorAdjunto=$profesorAdjunto; */
         $this->cupo=$cupo;
     }
 
     public function setCurso($cursoNombre){
-        $this->nombreCurso=$cursoNombre;
+        $this->cursoNombre=$cursoNombre;
     }
     //si no fuese privado, no es necesario el set ni el get.
     // Si es publico puedo cambiarlo (setearlo) asi: $this->nombreCurso="hola"; (si es un string)  
     // Si es publico puedo llamarlo (get) asi: $this->nombreCurso;
 
     public function getCurso():string{
-        return $this->nombreCurso;
+        return $this->cursoNombre;
     }
 
     public function setId($cursoId){
-        $this->codigoCurso=$cursoId;
+        $this->cursoId=$cursoId;
     }
 
     public function getId():int{
-        return $this->codigoCurso;
+        return $this->cursoId;
     }
 
     public function setAlumnos(Alumno $alumno){
@@ -50,19 +50,19 @@ class Curso
     }
 
     public function setProfTit($profesorTitular){
-        $this->profesor=$profesorTitular;
+        $this->profesorTitular=$profesorTitular;
     }
 
     public function getProfTit():ProfesorTitular{
-        return $this->profesor;
+        return $this->profesorTitular;
     }
 
     public function setProfAdj($profesorAdjunto){
-        $this->profesorAdj=$profesorAdjunto;
+        $this->profesorAdjunto=$profesorAdjunto;
     }
 
     public function getProfAdj():ProfesorAdjunto{
-        return $this->profesorAdj;
+        return $this->profesorAdjunto;
     }
 
 
@@ -72,7 +72,7 @@ class Curso
 
         $Profes="El profesor titular será " . $profesorTitular->getNombre()." ".$profesorTitular->getApellido().", quien estará acompañado del profesor adjunto " . $profesorAdjunto-> getNombre()." ".$profesorAdjunto->getApellido();
         return $Profes;
-    } //igualo las variables a los objetos que le pasé alc onstructor de la clase Curso.
+    }  //igualo las variables a los objetos que le pasé alc onstructor de la clase Curso.
     // Una vez que hice esto, usé el getNombre de ese OBJETO (por ejemplo, el de $profesorTitular, lo va a ir a buscar a la clase, pero al no encontrarlo va a ir al padre (Profesor) )
 
 
